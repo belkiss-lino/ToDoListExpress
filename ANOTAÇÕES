@@ -1,0 +1,23 @@
+PARA CRIAR O BANCO DE DADOS SERÁ UTILIZADO O POSTGRES,
+PARA NÃO PRECISAR INSTALÁ-LO NA MÁQUINA, USA-SE O SERVIÇO 
+GRATUITO E ONLINE DE POSTGRESS -----> ElephantSQL <-------
+                    elephantsql.com
+
+1 - criar nova instância
+2 - name = nomeDoBD
+    plan = tiny turtle (plano grátis)
+    
+3 - select region
+    São Paulo
+
+4 - seguir
+5 - clicar no link no nome do bd que criou - vai abrir details
+6 - copiar o URL
+7 - fora o src criar uma pasta .env
+8 - em browser crear as tabelas:
+    CREATE TABLE users ( user_id PRIMARY KEY, user_name VARCHAR(255) UNIQUE NOT NULL );
+
+    CREATE TABLE todos ( todo_id serial PRIMARY KEY, todo_description TEXT NOT NULL, 
+    todo_done BOOLEAN NOT NULL, user_id INT NOT NULL, FOREIGN KEY (user_id) REFERENCES users (user_id) );
+
+    INSERT into users(user_name) VALUES ('rafael@gmail.com');
